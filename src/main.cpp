@@ -23,6 +23,7 @@ int main()
 		engFillRect((x), (y), 32, 32);
 		engDrawTextF(10, 10, "Speed: %f", speed);	
 
+		engDrawTextF(1000, 10, "Speed: %f", speed);
 		update_input(x, y, speed);
 	}
 }
