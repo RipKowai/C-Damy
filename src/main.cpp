@@ -12,7 +12,7 @@ int main()
 
 	char mySpeed[] = "Hello";
 
-	engInit("Tiny Engine", 800, 600);
+	engInit("Tiny Engine", 1480, 800);
 
 	while(engBeginFrame()) 
 	{
