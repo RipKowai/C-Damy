@@ -1,81 +1,54 @@
 #include "Engine/TinyEngine.h"
-
-
-struct Vector 
-{
-	Vector() {}
-	Vector(float scalar)
-		: x(scalar), y(scalar){}
-	Vector(float x, float y)
-		: x(x), y(y) {}
-	float x = 0;
-	float y = 0;
-};
+#include "PlayerInput.h"
+#include "Math/Vector.h"
 
 class Actor 
 {
 public:
+	Actor() { }
 	Actor(Vector position, Vector size, Color color) 
 		: position(position), size(size), color(color){}
 	Vector position;
 	Vector size;
-	Color color;
+	Color color = COLOR_WHITE;
 };
 
 void update_input(Vector& position, float& speed);
 void draw_actor(Actor actor);
 
+//macro
+#define NUM_ACTORS 10
 int main()
 {
-	Actor player = Actor(Vector(50.f, 50.f), Vector(32.f), COLOR_WHITE);
-	float  speed = 100.f;
-	char mySpeed[] = "Hello";
-
 	engInit("Tiny Engine", 1480, 800);
+	// This here is the Player Spawn Position that is being randomized
+	float  speed = 100.f;
 
-	Vector position = Vector(100.f, 100.f);
+	//this here is a 
+	Actor actors[NUM_ACTORS];
+	for (int i = 0; i < NUM_ACTORS; ++i)
+	{
+		actors[i] = Actor(Vector(engRandom(1400), engRandom(800)), Vector(16.f), COLOR_SALMON);
+	}
+
+	Actor* player = &actors[0];
+	(*player) = Actor(Vector(400.f, 300.f), Vector(32.f), COLOR_GREEN);
 
 	while(engBeginFrame()) 
 	{
 		engSetDrawColor(COLOR_DARK_GRAY);
 		engClearScreen();
 
-		engSetDrawColor(COLOR_VIOLET);
 		engFillRect(position.x, position.y, 32, 32);
-		engDrawTextF(10, 10, "Speed: %f", speed);	
 
-		engDrawTextF(1000, 10, "Speed: %f", speed);
-		update_input(player.position, speed);
-		draw_actor(player);
-	}
-}
 
-void update_input(Vector& position, float& speed) 
-{	
-	if (engKeyDown(Key::W)) 
-	{
-		position.y -= speed * engDeltaTime();
-	}
-	if (engKeyDown(Key::S)) 
-	{
-		position.y += speed * engDeltaTime();
-	}
-	if (engKeyDown(Key::D)) 
-	{
-		position.x += speed * engDeltaTime();
-	}
-	if (engKeyDown(Key::A)) 
-	{
-		position.x -= speed * engDeltaTime();
-	}
+		update_input(player->position, speed);
+		//draw_actor(player);
 
-	if (engKeyPressed(Key::E)) 
-	{
-		speed += 50.f;
-	}
-	if (engKeyPressed(Key::Q)) 
-	{
-		speed -= 50.f;
+		for (int i = 0; i < NUM_ACTORS; ++i)
+		{
+			draw_actor(actors[i]);
+		}
 	}
 }
 
