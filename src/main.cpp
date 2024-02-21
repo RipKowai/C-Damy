@@ -1,9 +1,9 @@
 #include "Engine/TinyEngine.h"
 
 
-	void update_input(float& x, float& y, float& speed);
+void update_input(float& x, float& y, float& speed);
 
-int main()
+int main() 
 {
 	float x = 0;
 	float y = 0;
@@ -14,8 +14,7 @@ int main()
 
 	engInit("Tiny Engine", 1480, 800);
 
-	while(engBeginFrame()) 
-	{
+	while(engBeginFrame()) {
 		engSetDrawColor(COLOR_DARK_GRAY);
 		engClearScreen();
 
@@ -27,8 +26,9 @@ int main()
 		update_input(x, y, speed);
 	}
 }
-void update_input(float& x, float& y, float& speed) {
-	
+
+void update_input(float& x, float& y, float& speed) 
+{
 	if (engKeyDown(Key::W)) {
 		y -= speed * engDeltaTime();
 	}
