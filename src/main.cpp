@@ -1,17 +1,9 @@
 #include "Engine/TinyEngine.h"
 #include "PlayerInput.h"
 #include "Math/Vector.h"
+#include "Actor.h"
 
-class Actor 
-{
-public:
-	Actor() { }
-	Actor(Vector position, Vector size, Color color) 
-		: position(position), size(size), color(color){}
-	Vector position;
-	Vector size;
-	Color color = COLOR_WHITE;
-};
+
 
 void update_input(Vector& position, float& speed);
 void draw_actor(Actor actor);
@@ -39,26 +31,12 @@ int main()
 		engSetDrawColor(COLOR_DARK_GRAY);
 		engClearScreen();
 
-		engFillRect(position.x, position.y, 32, 32);
-
-
 		update_input(player->position, speed);
 		//draw_actor(player);
 
 		for (int i = 0; i < NUM_ACTORS; ++i)
 		{
-			draw_actor(actors[i]);
+			actors[i].draw();
 		}
 	}
-}
-
-void draw_actor(Actor actor) 
-{
-	engSetDrawColor(actor.color);
-	engFillRect(
-		(int)actor.position.x,
-		(int)actor.position.y,
-		(int)actor.size.x,
-		(int)actor.size.y
-	);
 }

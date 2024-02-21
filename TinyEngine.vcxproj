@@ -88,11 +88,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Actor.cpp" />
     <ClCompile Include="src\PlayerInput.cpp" />
     <ClCompile Include="src\Engine\TinyEngine.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Actor.h" />
     <ClInclude Include="src\Math\Vector.h" />
     <ClInclude Include="src\PlayerInput.h" />
     <ClInclude Include="src\Engine\Input.h" />

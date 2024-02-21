@@ -3,22 +3,28 @@
 
 void update_input(Vector& position, float& speed)
 {
+	Vector input;
+
 	if (engKeyDown(Key::W))
 	{
-		position.y -= speed * engDeltaTime();
+		input.y -= 1.f;
 	}
 	if (engKeyDown(Key::S))
 	{
-		position.y += speed * engDeltaTime();
+		input.y += 1.f;
 	}
 	if (engKeyDown(Key::D))
 	{
-		position.x += speed * engDeltaTime();
+		input.x += 1.f;
 	}
 	if (engKeyDown(Key::A))
 	{
-		position.x -= speed * engDeltaTime();
+		input.x -= 1.f;
 	}
+
+	input.normalize();
+	position.x += input.x * speed * engDeltaTime();
+	position.y += input.y * speed * engDeltaTime();
 
 	if (engKeyPressed(Key::E))
 	{
