@@ -8,9 +8,10 @@ public:
 	Actor(Vector position, Vector size, Color color)
 		: position(position), size(size), color(color) {}
 
-	void draw();
+	virtual void update() {}
+	virtual void draw();
 
 	Vector position;
-	Vector size;
+	Vector size = Vector(32);
 	Color color = COLOR_WHITE;
 };
