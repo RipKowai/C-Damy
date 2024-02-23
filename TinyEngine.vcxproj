@@ -88,6 +88,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Game\Enemy.cpp" />
     <ClCompile Include="src\Game\Player.cpp" />
     <ClCompile Include="src\Game\Game.cpp" />
     <ClCompile Include="src\Actor.cpp" />
@@ -96,6 +97,7 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Game\Enemy.h" />
     <ClInclude Include="src\Game\Player.h" />
     <ClInclude Include="src\Game\Game.h" />
     <ClInclude Include="src\Actor.h" />

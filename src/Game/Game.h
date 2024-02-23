@@ -14,6 +14,8 @@ class Game
 		void update();
 		void render();
 
+		Actor* get_player() { return player; }
+
 	private:
 		Actor* actors[MAX_ACTORS] = { nullptr };
 		Actor* player = nullptr;
