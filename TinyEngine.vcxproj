@@ -98,6 +98,7 @@
     <ClCompile Include="src\Game\Player.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Math\AABB.cpp" />
+    <ClCompile Include="src\Math\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Config\Config.h" />
@@ -110,6 +111,7 @@
     <ClInclude Include="src\Game\Game.h" />
     <ClInclude Include="src\Game\Player.h" />
     <ClInclude Include="src\Math\AABB.h" />
+    <ClInclude Include="src\Math\Math.h" />
     <ClInclude Include="src\Math\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

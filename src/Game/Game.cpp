@@ -3,8 +3,8 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Math/AABB.h"
+#include "Math/Math.h"
 
-constexpr float TAU = 0.2831f;
 Game* game = nullptr;
 
 Game::Game()
@@ -21,7 +21,7 @@ void Game::update()
 {
 	if (engTimePassedSince(last_spawn_time) > SPAWN_INTERVAL)
 	{
-		float angle = engRandomF() * TAU;
+		float angle = engRandomF() * Math::TAU;
 		Vector offset = Vector(cosf(angle), sinf(angle)) * 1000.f;
 
 		spawn_actor(new Enemy(player->position + offset));

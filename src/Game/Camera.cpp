@@ -7,7 +7,13 @@ void Camera::update()
 {
 	if (game->get_player() != nullptr)
 	{
-		position = game->get_player() -> position;
+		Vector player_position = game->get_player()->position;
+		Vector mouse_position = screen_to_world(Vector(engMouseX(), engMouseY()));
+
+		Vector target_position = Vector::lerp(player_position, mouse_position, 0.3f);
+
+		position = Vector::lerp(position, target_position, CAMERA_SPEED * engDeltaTime());
+
 	}
 }
 

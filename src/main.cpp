@@ -5,6 +5,7 @@
 int main()
 {
 	engInit("Hey", Config::WINDOW_WIDTH, Config::WINDOW_HEIGHT);
+	game = new Game;
 
 	while(engBeginFrame())
 	{

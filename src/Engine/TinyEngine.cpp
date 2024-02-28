@@ -152,8 +152,6 @@ float engCurrentTime()
 	return float(last_frame_time.QuadPart - startup_time.QuadPart) / clock_freq.QuadPart;
 }
 
-
-
 float engTimePassedSince(float time)
 {
 	return engCurrentTime() - time;
