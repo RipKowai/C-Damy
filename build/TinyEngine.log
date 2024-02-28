@@ -1,8 +1,10 @@
-﻿  Actor.cpp
-  Enemy.cpp
-  Game.cpp
-  Player.cpp
-  PlayerInput.cpp
-  main.cpp
-  Generating Code...
+﻿  Player.cpp
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(50,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(50,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(59,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(59,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(67,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(67,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(66,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(66,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   TinyEngine.vcxproj -> C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\bin\TinyEngine_Debug.exe

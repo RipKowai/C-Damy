@@ -3,7 +3,7 @@
 
 //forward-declare
 class Actor;
-
+enum class Collision_Channel;
 
 
 class Game
@@ -14,7 +14,12 @@ class Game
 		void update();
 		void render();
 
+
 		Actor* get_player() { return player; }
+
+		void spawn_actor(Actor* actor);
+
+		Actor* get_collision_actor(Actor* other, Collision_Channel channel);
 
 	private:
 		Actor* actors[MAX_ACTORS] = { nullptr };

@@ -25,6 +25,6 @@ struct Vector
 };
 
 inline Vector operator+(Vector lhs, Vector rhs) { return Vector(lhs.x + rhs.x, lhs.y + rhs.y); }
-inline Vector operator-(Vector lhs, Vector rhs) { return Vector(lhs.x + rhs.x, lhs.y + rhs.y); }
+inline Vector operator-(Vector lhs, Vector rhs) { return Vector(lhs.x - rhs.x, lhs.y - rhs.y); }
 inline Vector operator*(Vector lhs, float rhs) { return Vector(lhs.x * rhs, lhs.y * rhs); }
 inline Vector operator*(float lhs, Vector rhs) { return Vector(rhs.x * lhs, rhs.y * lhs); }
