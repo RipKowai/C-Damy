@@ -7,7 +7,6 @@ public:
 	Player(Vector position);
 
 	void update() override;
-	void draw();
-	float speed = 500.f;
+	void draw() override;
+	float speed = 300.f;
 };
-

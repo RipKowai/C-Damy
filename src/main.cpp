@@ -1,22 +1,12 @@
 #include "Engine/TinyEngine.h"
-#include "PlayerInput.h"
-#include "Math/Vector.h"
-#include "Actor.h"
 #include "Game/Game.h"
-
-
-
-void update_input(Vector& position, float& speed);
-void draw_actor(Actor actor);
-
-//macro
-#define NUM_ACTORS 10
+#include "Config/Config.h"
 
 int main()
 {
-	engInit("Tiny Engine", 1480, 800);
+	engInit("Hey", Config::WINDOW_WIDTH, Config::WINDOW_HEIGHT);
 
-	while(engBeginFrame()) 
+	while(engBeginFrame())
 	{
 		engSetDrawColor(COLOR_DARK_GRAY);
 		engClearScreen();
@@ -26,9 +16,7 @@ int main()
 			return 0;
 		}
 
-		game.update();
-		game.render();
-
-		
+		game->update();
+		game->render();
 	}
 }

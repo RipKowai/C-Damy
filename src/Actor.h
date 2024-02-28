@@ -6,15 +6,14 @@ enum class Collision_Channel
 {
 	None,
 	Player,
-	Bullet,
 	Enemy
 };
+
 class Actor
 {
 public:
-	Actor() { }
 	Actor(Vector position, Vector size, Color color)
-		: position(position), size(size), color(color) {}
+		: position(position), size(size), color(color) { }
 
 	virtual void update() {}
 	virtual void draw();

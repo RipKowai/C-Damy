@@ -9,14 +9,14 @@ Enemy::Enemy(Vector position)
 
 void Enemy::update()
 {
-	if (game.get_player() != nullptr)
+	if (game->get_player() != nullptr)
 	{
-		Vector direction = game.get_player()->position - position;
+		Vector direction = game->get_player()->position - position;
 		direction.normalize();
 
 		position += direction * speed * engDeltaTime();
 
-		Actor* player = game.get_collision_actor(this, Collision_Channel::Player);
+		Actor* player = game->get_colliding_actor(this, Collision_Channel::Player);
 		if (player)
 		{
 			player->destroy();

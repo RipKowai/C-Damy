@@ -1,11 +1,15 @@
-#include"Actor.h"
+#include "Actor.h"
+#include "Game/Game.h"
 
-void Actor::draw() 
+void Actor::draw()
 {
+	Vector draw_position = position - size * 0.5f;
+	draw_position = game->get_camera().world_to_screen(draw_position);
+
 	engSetDrawColor(color);
 	engFillRect(
-		(int)position.x,
-		(int)position.y,
+		(int)draw_position.x,
+		(int)draw_position.y,
 		(int)size.x,
 		(int)size.y
 	);

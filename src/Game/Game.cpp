@@ -3,18 +3,30 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Math/AABB.h"
-Game game;
+
+constexpr float TAU = 0.2831f;
+Game* game = nullptr;
 
 Game::Game()
 {
 	actors[0] = new Player(Vector(100.f, 100.f));
 	player = actors[0];
 
-	actors[1] = new Enemy(Vector(600.f, 370.f));
+	actors[1] = new Enemy(Vector(600.f, 250.f));
+
+	last_spawn_time = engCurrentTime();
 }
 
 void Game::update()
 {
+	if (engTimePassedSince(last_spawn_time) > SPAWN_INTERVAL)
+	{
+		float angle = engRandomF() * TAU;
+		Vector offset = Vector(cosf(angle), sinf(angle)) * 1000.f;
+
+		spawn_actor(new Enemy(player->position + offset));
+		last_spawn_time = engCurrentTime();
+	}
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
 		if (actors[i] != nullptr)
@@ -26,20 +38,42 @@ void Game::update()
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
 		if (actors[i] == nullptr)
-		{
 			continue;
-		}
 
 		if (actors[i]->get_is_destroyed())
 		{
+			if (actors[i] == player)
+			{
+				player = nullptr;
+			}
+
 			delete actors[i];
 			actors[i] = nullptr;
 		}
 	}
+
+	camera.update();
 }
 
-void Game::render() 
+void Game::render()
 {
+	for (int x = -50; x <= 50; ++x)
+	{
+		for (int y = -50; y <= 50; ++y)
+		{
+			if ((x + y) % 2 == 0)
+			{
+				engSetDrawColor(0x2c1d36);
+			}
+			else
+				engSetDrawColor(0x88679e);
+
+			Vector position = Vector(x * GRID_SIZE, y * GRID_SIZE);
+			position = camera.world_to_screen(position);
+
+			engFillRect(position.x, position.y, GRID_SIZE, GRID_SIZE);
+		}
+	}
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
 		if (actors[i] != nullptr)
@@ -49,7 +83,7 @@ void Game::render()
 	}
 }
 
-void Game:: spawn_actor(Actor* actor)
+void Game::spawn_actor(Actor* actor)
 {
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
@@ -61,23 +95,18 @@ void Game:: spawn_actor(Actor* actor)
 	}
 }
 
-Actor* Game::get_collision_actor(Actor* other, Collision_Channel channel)
+Actor* Game::get_colliding_actor(Actor* other, Collision_Channel channel)
 {
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
 		if (actors[i] == other)
-		{
 			continue;
-		}
 
 		if (actors[i] == nullptr)
-		{
 			continue;
-		}
+
 		if (actors[i]->collision_channel != channel)
-		{
 			continue;
-		}
 
 		AABB a = AABB::from_position_size(other->position, other->size);
 		AABB b = AABB::from_position_size(actors[i]->position, actors[i]->size);
@@ -86,7 +115,7 @@ Actor* Game::get_collision_actor(Actor* other, Collision_Channel channel)
 		{
 			return actors[i];
 		}
-
 	}
+
 	return nullptr;
 }

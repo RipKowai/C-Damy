@@ -1,31 +1,37 @@
 #pragma once
-#define MAX_ACTORS 20
+#include "Camera.h"
 
-//forward-declare
+#define MAX_ACTORS 100
+
+// Forward-declare
 class Actor;
 enum class Collision_Channel;
 
-
 class Game
 {
-	public:
-		Game();
-		
-		void update();
-		void render();
+public:
+	Game();
 
+	void update();
+	void render();
 
-		Actor* get_player() { return player; }
+	Actor* get_player() { return player; }
+	Camera& get_camera() { return camera; }
 
-		void spawn_actor(Actor* actor);
+	void spawn_actor(Actor* actor);
 
-		Actor* get_collision_actor(Actor* other, Collision_Channel channel);
+	Actor* get_colliding_actor(Actor* other, Collision_Channel channel);
 
-	private:
-		Actor* actors[MAX_ACTORS] = { nullptr };
-		Actor* player = nullptr;
+private:
+	static constexpr float SPAWN_INTERVAL = 0.5f;
+	static constexpr float GRID_SIZE = 24.f;
 
-		float player_speed = 100.f;
+	Actor* actors[MAX_ACTORS] = { nullptr };
+	Actor* player = nullptr;
+
+	Camera camera;
+
+	float last_spawn_time = 0.f;
 };
 
-extern Game game;
+extern Game* game;

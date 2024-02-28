@@ -9,4 +9,3 @@ public:
 
 	float speed = 50.f;
 };
-
