@@ -6,6 +6,7 @@ enum class Collision_Channel
 {
 	None,
 	Player,
+	PickUps,
 	Enemy
 };
 
@@ -17,6 +18,9 @@ public:
 
 	virtual void update() {}
 	virtual void draw();
+
+
+	virtual void hit(int damage) { destroy(); }
 
 	void destroy() { is_destroyed = true; }
 	bool get_is_destroyed() { return is_destroyed; }

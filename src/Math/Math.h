@@ -2,5 +2,5 @@
 
 namespace Math
 {
-	constexpr float TAU = 0.2831f;
+	constexpr float TAU = 6.2831f;
 }

@@ -24,6 +24,7 @@ public:
 
 private:
 	static constexpr float SPAWN_INTERVAL = 0.5f;
+	static constexpr float PICKUP_INTERVAL = 5.f;
 	static constexpr float GRID_SIZE = 24.f;
 
 	Actor* actors[MAX_ACTORS] = { nullptr };
@@ -32,6 +33,7 @@ private:
 	Camera camera;
 
 	float last_spawn_time = 0.f;
+	float last_pickup_spawn_time = 5.f;
 };
 
 extern Game* game;

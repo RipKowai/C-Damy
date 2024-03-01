@@ -40,6 +40,16 @@ void Player::update()
 
 		game->spawn_actor(new Bullet(position, bullet_direction));
 	}
+
+	Actor* pickupActor = game->get_colliding_actor(this, Collision_Channel::PickUps);
+	if (pickupActor)
+	{
+		pickupActor->destroy();
+		if (health < MAX_HEALTH)
+		{
+			health++;
+		}
+	}
 }
 
 void Player::draw()
@@ -57,6 +67,28 @@ void Player::draw()
 	engDrawLine(
 		crosshair_start.x, crosshair_start.y,
 		crosshair_end.x, crosshair_end.y);
+
+	for (int i = 0; i < MAX_HEALTH; ++i)
+	{
+		if (i < health)
+			engSetDrawColor(COLOR_WHITE);
+		else
+			engSetDrawColor(0xFFFFF55);
+
+		engFillRect(10 + 40 * i, 10, 32, 32);
+	}
+
+	// Flash player when invincible 
+	if (is_invincible())
+	{
+		if (int(engCurrentTime() * 15) % 2 == 0)
+			color = 0xFFFFFF77;
+
+		else
+			color = COLOR_WHITE;
+	}
+	else
+		color = COLOR_WHITE;
 
 	Actor::draw();
 }

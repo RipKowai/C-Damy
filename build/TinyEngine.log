@@ -1,2 +1,11 @@
-﻿  main.cpp
+﻿  Player.cpp
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.h(38,15): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(35,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(35,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(57,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(57,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(69,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(69,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(68,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\src\Game\Player.cpp(68,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   TinyEngine.vcxproj -> C:\Users\georgi.damyanov\Documents\GitHub\C-Damy\bin\TinyEngine_Debug.exe

@@ -4,6 +4,7 @@
 #include "Enemy.h"
 #include "Math/AABB.h"
 #include "Math/Math.h"
+#include "PickUps.h"
 
 Game* game = nullptr;
 
@@ -19,7 +20,7 @@ Game::Game()
 
 void Game::update()
 {
-	if (engTimePassedSince(last_spawn_time) > SPAWN_INTERVAL)
+	if (engTimePassedSince(last_spawn_time) > SPAWN_INTERVAL && player != nullptr)
 	{
 		float angle = engRandomF() * Math::TAU;
 		Vector offset = Vector(cosf(angle), sinf(angle)) * 1000.f;
@@ -27,6 +28,15 @@ void Game::update()
 		spawn_actor(new Enemy(player->position + offset));
 		last_spawn_time = engCurrentTime();
 	}
+
+	if (engTimePassedSince(last_pickup_spawn_time) > PICKUP_INTERVAL && player != nullptr) {
+		float angle = engRandomF() * Math::TAU;
+		Vector offset = Vector(cosf(angle), sinf(angle)) * 300.f;
+
+		spawn_actor(new PickUps(player->position + offset));
+		last_pickup_spawn_time = engCurrentTime();
+	}
+
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
 		if (actors[i] != nullptr)
@@ -57,9 +67,9 @@ void Game::update()
 
 void Game::render()
 {
-	for (int x = -50; x <= 50; ++x)
+	for (int x = -100; x <= 100; ++x)
 	{
-		for (int y = -50; y <= 50; ++y)
+		for (int y = -100; y <= 100; ++y)
 		{
 			if ((x + y) % 2 == 0)
 			{

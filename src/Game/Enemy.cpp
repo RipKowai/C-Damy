@@ -19,7 +19,7 @@ void Enemy::update()
 		Actor* player = game->get_colliding_actor(this, Collision_Channel::Player);
 		if (player)
 		{
-			player->destroy();
+			player->hit(1);
 		}
 	}
 }
