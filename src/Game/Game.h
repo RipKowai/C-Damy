@@ -1,7 +1,7 @@
 #pragma once
 #include "Camera.h"
 
-#define MAX_ACTORS 100
+#define MAX_ACTORS 120
 
 // Forward-declare
 class Actor;

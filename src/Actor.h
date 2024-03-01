@@ -15,6 +15,7 @@ class Actor
 public:
 	Actor(Vector position, Vector size, Color color)
 		: position(position), size(size), color(color) { }
+	virtual ~Actor() { }
 
 	virtual void update() {}
 	virtual void draw();

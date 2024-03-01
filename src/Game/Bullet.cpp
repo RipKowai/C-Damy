@@ -15,7 +15,7 @@ void Bullet::update()
 	Actor* hit_actor = game->get_colliding_actor(this, Collision_Channel::Enemy);
 	if (hit_actor != nullptr)
 	{
-		hit_actor->destroy();
+		hit_actor->hit(DAMAGE);
 		destroy();
 	}
 

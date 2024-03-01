@@ -22,10 +22,13 @@ void Game::update()
 {
 	if (engTimePassedSince(last_spawn_time) > SPAWN_INTERVAL && player != nullptr)
 	{
-		float angle = engRandomF() * Math::TAU;
-		Vector offset = Vector(cosf(angle), sinf(angle)) * 1000.f;
+		if (Enemy::NUM_ENEMIES < 20)
+		{
+			float angle = engRandomF() * Math::TAU;
+			Vector offset = Vector(cosf(angle), sinf(angle)) * 1000.f;
 
-		spawn_actor(new Enemy(player->position + offset));
+			spawn_actor(new Enemy(player->position + offset));
+		}
 		last_spawn_time = engCurrentTime();
 	}
 

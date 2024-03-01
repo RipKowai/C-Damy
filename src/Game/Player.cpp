@@ -30,7 +30,7 @@ void Player::update()
 	if (engKeyPressed(Key::Q))
 		speed -= 50.f;
 
-	if (engMouseButtonPressed(Mouse_Button::Left))
+	if (engMouseButtonDown(Mouse_Button::Left))
 	{
 		Vector mouse_position = Vector(engMouseX(), engMouseY());
 		mouse_position = game->get_camera().screen_to_world(mouse_position);

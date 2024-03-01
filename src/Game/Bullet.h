@@ -11,6 +11,7 @@ public:
 private:
 	static constexpr float SPEED = 1000.f;
 	static constexpr float BULLET_LIFETIME = 2.f;
+	static constexpr int DAMAGE = 40;
 
 	Vector direction;
 };
