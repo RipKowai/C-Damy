@@ -2,9 +2,12 @@
 #include "Actor.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "PickUp.h"
+#include "AmmoCrate.h"
+#include "Tank.h"
 #include "Math/AABB.h"
 #include "Math/Math.h"
-#include "PickUps.h"
+#include <cmath>
 
 Game* game = nullptr;
 
@@ -13,32 +16,55 @@ Game::Game()
 	actors[0] = new Player(Vector(100.f, 100.f));
 	player = actors[0];
 
-	actors[1] = new Enemy(Vector(600.f, 250.f));
+	timers.add_timer(2.f, [this]() {
+		if (get_player() == nullptr)
+			return;
 
-	last_spawn_time = engCurrentTime();
+		if (Enemy::NUM_ENEMIES < 20)
+		{
+			spawn_actor<Enemy>(
+				get_player()->position + Vector::random_point_on_circle(500.f)
+			);
+		}
+
+	}, true);
+
+	timers.add_timer(100.f, [this]() {
+		if (get_player() == nullptr)
+			return;
+
+		if (Tank::am_tanks < 5)
+		{
+			spawn_actor<Tank>(
+				get_player()->position + Vector::random_point_on_circle(600.f)
+			);
+		}
+
+	}, true);
+
+	timers.add_timer(10.f, [this]() {
+		if (get_player() == nullptr)
+			return;
+
+		spawn_actor<PickUp>(
+			get_player()->position + Vector::random_point_on_circle(200.f)
+		);
+
+	}, true);
+
+	timers.add_timer(15.f, [this]() {
+		if (get_player() == nullptr)
+			return;
+
+		spawn_actor<AmmoCrate>(
+			get_player()->position + Vector::random_point_on_circle(300.f)
+		);
+	}, true);
 }
 
 void Game::update()
 {
-	if (engTimePassedSince(last_spawn_time) > SPAWN_INTERVAL && player != nullptr)
-	{
-		if (Enemy::NUM_ENEMIES < 20)
-		{
-			float angle = engRandomF() * Math::TAU;
-			Vector offset = Vector(cosf(angle), sinf(angle)) * 1000.f;
-
-			spawn_actor(new Enemy(player->position + offset));
-		}
-		last_spawn_time = engCurrentTime();
-	}
-
-	if (engTimePassedSince(last_pickup_spawn_time) > PICKUP_INTERVAL && player != nullptr) {
-		float angle = engRandomF() * Math::TAU;
-		Vector offset = Vector(cosf(angle), sinf(angle)) * 300.f;
-
-		spawn_actor(new PickUps(player->position + offset));
-		last_pickup_spawn_time = engCurrentTime();
-	}
+	timers.update();
 
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
@@ -70,16 +96,15 @@ void Game::update()
 
 void Game::render()
 {
-	for (int x = -100; x <= 100; ++x)
+	// Draw background
+	for (int x = -50; x <= 50; ++x)
 	{
-		for (int y = -100; y <= 100; ++y)
+		for (int y = -50; y <= 50; ++y)
 		{
 			if ((x + y) % 2 == 0)
-			{
-				engSetDrawColor(0x2c1d36);
-			}
+				engSetDrawColor(0x120D0FFF);
 			else
-				engSetDrawColor(0x88679e);
+				engSetDrawColor(0x21181BFF);
 
 			Vector position = Vector(x * GRID_SIZE, y * GRID_SIZE);
 			position = camera.world_to_screen(position);
@@ -87,23 +112,12 @@ void Game::render()
 			engFillRect(position.x, position.y, GRID_SIZE, GRID_SIZE);
 		}
 	}
+
 	for (int i = 0; i < MAX_ACTORS; ++i)
 	{
 		if (actors[i] != nullptr)
 		{
 			actors[i]->draw();
-		}
-	}
-}
-
-void Game::spawn_actor(Actor* actor)
-{
-	for (int i = 0; i < MAX_ACTORS; ++i)
-	{
-		if (actors[i] == nullptr)
-		{
-			actors[i] = actor;
-			break;
 		}
 	}
 }

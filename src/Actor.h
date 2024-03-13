@@ -6,8 +6,9 @@ enum class Collision_Channel
 {
 	None,
 	Player,
-	PickUps,
-	Enemy
+	Enemy,
+	AmmoCrate,
+	PickUp
 };
 
 class Actor
@@ -19,7 +20,6 @@ public:
 
 	virtual void update() {}
 	virtual void draw();
-
 
 	virtual void hit(int damage) { destroy(); }
 

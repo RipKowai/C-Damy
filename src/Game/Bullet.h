@@ -4,14 +4,19 @@
 class Bullet : public Actor
 {
 public:
-	Bullet(Vector position, Vector direction);
+	Bullet(Vector position);
 	void update() override;
-	float spawn_time = 10.f;
+
+	void set_direction(Vector new_direction)
+	{
+		direction = new_direction;
+	}
 
 private:
 	static constexpr float SPEED = 1000.f;
-	static constexpr float BULLET_LIFETIME = 2.f;
+	static constexpr float LIFETIME = 2.f;
 	static constexpr int DAMAGE = 40;
 
 	Vector direction;
+	float spawn_time = 0.f;
 };

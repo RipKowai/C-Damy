@@ -1,7 +1,8 @@
 #pragma once
 #include "Camera.h"
+#include "TimerSystem.h"
 
-#define MAX_ACTORS 120
+#define MAX_ACTORS 100
 
 // Forward-declare
 class Actor;
@@ -18,22 +19,33 @@ public:
 	Actor* get_player() { return player; }
 	Camera& get_camera() { return camera; }
 
-	void spawn_actor(Actor* actor);
+	template<typename ActorType>
+	ActorType* spawn_actor(Vector position)
+	{
+		for (int i = 0; i < MAX_ACTORS; ++i)
+		{
+			if (actors[i] == nullptr)
+			{
+				ActorType* new_actor = new ActorType(position);
+				actors[i] = new_actor;
+
+				return new_actor;
+			}
+		}
+
+		return nullptr;
+	}
 
 	Actor* get_colliding_actor(Actor* other, Collision_Channel channel);
 
 private:
-	static constexpr float SPAWN_INTERVAL = 0.5f;
-	static constexpr float PICKUP_INTERVAL = 5.f;
-	static constexpr float GRID_SIZE = 24.f;
+	static constexpr float GRID_SIZE = 100.f;
 
 	Actor* actors[MAX_ACTORS] = { nullptr };
 	Actor* player = nullptr;
 
 	Camera camera;
-
-	float last_spawn_time = 0.f;
-	float last_pickup_spawn_time = 5.f;
+	Timer_System timers;
 };
 
 extern Game* game;

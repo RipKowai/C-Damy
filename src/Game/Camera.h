@@ -12,6 +12,4 @@ public:
 	Vector screen_to_world(Vector vec);
 
 	Vector position;
-
 };
-

@@ -1,11 +1,12 @@
 #include "Engine/TinyEngine.h"
 #include "Game/Game.h"
-#include "Config/Config.h"
+#include "Config.h"
 
 int main()
 {
 	engInit("Hey", Config::WINDOW_WIDTH, Config::WINDOW_HEIGHT);
-	game = new Game;
+
+	game = new Game();
 
 	while(engBeginFrame())
 	{
@@ -20,4 +21,6 @@ int main()
 		game->update();
 		game->render();
 	}
+
+	delete game;
 }

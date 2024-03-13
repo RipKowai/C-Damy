@@ -1,5 +1,6 @@
 #pragma once
 #include "Actor.h"
+#include "TimerSystem.h"
 
 class Player : public Actor
 {
@@ -8,7 +9,6 @@ public:
 
 	void update() override;
 	void draw() override;
-	float speed = 300.f;
 
 	void hit(int damage) override
 	{
@@ -24,17 +24,23 @@ public:
 		}
 	}
 
-	//float speed = 300.f;
+	float speed = 300.f;
 
-private: 
+private:
 	static constexpr float INVINCIBILITY_TIME = 2.f;
-	static constexpr float MAX_HEALTH = 3.f;
+	static constexpr int MAX_HEALTH = 3;
+	static constexpr int M_ammo = 40.f;
 
 	bool is_invincible()
 	{
 		return engTimePassedSince(last_hit_time) < INVINCIBILITY_TIME;
 	}
 
+	bool is_shooting = false;
+
 	int health = MAX_HEALTH;
+	int ammo = M_ammo;
 	float last_hit_time = -INVINCIBILITY_TIME;
+
+	Timer_System s_timers;
 };
