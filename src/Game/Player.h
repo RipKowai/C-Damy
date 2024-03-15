@@ -29,7 +29,7 @@ public:
 private:
 	static constexpr float INVINCIBILITY_TIME = 2.f;
 	static constexpr int MAX_HEALTH = 3;
-	static constexpr int M_ammo = 40.f;
+	static constexpr int M_ammo = 100.f;
 
 	bool is_invincible()
 	{
@@ -37,6 +37,7 @@ private:
 	}
 
 	bool is_shooting = false;
+	bool is_cooldown = false;
 
 	int health = MAX_HEALTH;
 	int ammo = M_ammo;

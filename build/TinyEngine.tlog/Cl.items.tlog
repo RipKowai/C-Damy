@@ -1,14 +1,12 @@
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\AmmoCrate.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\AmmoCrate.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Actor.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\Actor.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Engine\TinyEngine.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\TinyEngine.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Bullet.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\Bullet.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Camera.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\Camera.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Enemy.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\Enemy.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Game.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\Game.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\PickUp.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\PickUp.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\Player.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\TimerSystem.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\TimerSystem.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\main.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\main.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Math\AABB.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\AABB.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Math\Vector.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\Vector.obj
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Tank.cpp;C:\Users\Galaxy\Documents\GitHub\C-Damy\build\Tank.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Actor.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\Actor.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Engine\TinyEngine.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\TinyEngine.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Bullet.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\Bullet.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Camera.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\Camera.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Enemy.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\Enemy.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Game.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\Game.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\PickUp.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\PickUp.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Player.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\Player.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\TimerSystem.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\TimerSystem.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\main.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\main.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Math\AABB.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\AABB.obj
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Math\Vector.cpp;C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\build\Vector.obj

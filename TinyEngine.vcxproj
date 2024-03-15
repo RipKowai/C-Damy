@@ -88,7 +88,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Game\AmmoCrate.cpp" />
     <ClCompile Include="src\Actor.cpp" />
     <ClCompile Include="src\Engine\TinyEngine.cpp" />
     <ClCompile Include="src\Game\Bullet.cpp" />
@@ -101,10 +100,8 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Math\AABB.cpp" />
     <ClCompile Include="src\Math\Vector.cpp" />
-    <ClCompile Include="src\Game\Tank.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Game\AmmoCrate.h" />
     <ClInclude Include="src\Actor.h" />
     <ClInclude Include="src\Config.h" />
     <ClInclude Include="src\Engine\Input.h" />
@@ -112,14 +109,15 @@
     <ClInclude Include="src\Game\Bullet.h" />
     <ClInclude Include="src\Game\Camera.h" />
     <ClInclude Include="src\Game\Enemy.h" />
+    <ClInclude Include="src\Game\EnemyTypes.h" />
     <ClInclude Include="src\Game\Game.h" />
     <ClInclude Include="src\Game\PickUp.h" />
+    <ClInclude Include="src\Game\PickUpTypes.h" />
     <ClInclude Include="src\Game\Player.h" />
     <ClInclude Include="src\Game\TimerSystem.h" />
     <ClInclude Include="src\Math\AABB.h" />
     <ClInclude Include="src\Math\Math.h" />
     <ClInclude Include="src\Math\Vector.h" />
-    <ClInclude Include="src\Game\Tank.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

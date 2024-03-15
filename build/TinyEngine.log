@@ -1,51 +1,11 @@
-﻿  AmmoCrate.cpp
-  Actor.cpp
-  TinyEngine.cpp
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Engine\TinyEngine.cpp(50,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Bullet.cpp
-  Camera.cpp
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Camera.cpp(11,72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Camera.cpp(11,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Enemy.cpp
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Enemy.cpp(44,79): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Enemy.cpp(44,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Enemy.cpp(44,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Enemy.cpp(44,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Enemy.cpp(51,4): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Enemy.cpp(50,15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Enemy.cpp(49,22): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Enemy.cpp(48,22): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Game.cpp
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.h(32,32): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Game.cpp(112,51): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Game.cpp(112,40): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Game.cpp(112,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Game.cpp(112,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  PickUp.cpp
-  Player.cpp
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.h(32,32): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.cpp(50,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.cpp(50,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.cpp(78,9): warning C4553: '==': result of expression not used; did you intend '='?
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.cpp(85,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.cpp(85,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.cpp(97,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.cpp(97,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.cpp(96,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Player.cpp(96,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  TimerSystem.cpp
-  main.cpp
-  AABB.cpp
-  Vector.cpp
-  Tank.cpp
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Tank.cpp(44,79): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Tank.cpp(44,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Tank.cpp(44,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Tank.cpp(44,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Tank.cpp(51,4): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Tank.cpp(50,15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Tank.cpp(49,22): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Tank.cpp(48,22): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Galaxy\Documents\GitHub\C-Damy\src\Game\Tank.cpp(55,2): warning C4102: 'Actor': unreferenced label
-  Generating Code...
-  TinyEngine.vcxproj -> C:\Users\Galaxy\Documents\GitHub\C-Damy\bin\TinyEngine_Debug.exe
+﻿  Player.cpp
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Player.h(32,32): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Player.cpp(48,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Player.cpp(48,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Player.cpp(87,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Player.cpp(87,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Player.cpp(99,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Player.cpp(99,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Player.cpp(98,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\src\Game\Player.cpp(98,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  TinyEngine.vcxproj -> C:\Users\Galaxy\Documents\GitHub\TinyEnging Exam\bin\TinyEngine_Debug.exe

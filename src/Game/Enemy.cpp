@@ -40,17 +40,25 @@ void Enemy::draw()
 		float health_percentage = float(health) / MAX_HEALTH;
 		Vector screen_position = game->get_camera().world_to_screen(position);
 
+		float hp_pos = screen_position.y - (size.y / 2) - 20.f;
+
 		engSetDrawColor(0x000000AA);
-		engFillRect(screen_position.x - 26.f, screen_position.y - 30.f, 26.f * 2.f, 8.f);
+		engFillRect(screen_position.x - 26.f, hp_pos, 26.f * 2.f, 8.f);
 
 		engSetDrawColor(COLOR_RED);
 		engFillRect(
 			screen_position.x - 26.f,
-			screen_position.y - 30.f,
+			hp_pos,
 			26.f * 2.f * health_percentage,
 			8.f
 		);
 	}
 
 	Actor::draw();
+}
+
+void Enemy::init(Vector a_size, Color a_color)
+{
+	size = a_size;
+	color = a_color;
 }

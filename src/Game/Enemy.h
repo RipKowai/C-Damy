@@ -11,6 +11,8 @@ public:
 	void update() override;
 	void draw() override;
 
+	void init(Vector a_size, Color a_color);
+
 	void hit(int damage) override
 	{
 		health -= damage;
@@ -22,9 +24,8 @@ public:
 
 	float speed = 50.f;
 
-private:
-	static constexpr int MAX_HEALTH = 100;
-	int health = MAX_HEALTH;
+	int MAX_HEALTH = 100;
+	int health;
 };
 
 extern int NUM_ENEMIES;

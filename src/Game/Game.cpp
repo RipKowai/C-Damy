@@ -2,9 +2,9 @@
 #include "Actor.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "EnemyTypes.h"
+#include "PickUpTypes.h"
 #include "PickUp.h"
-#include "AmmoCrate.h"
-#include "Tank.h"
 #include "Math/AABB.h"
 #include "Math/Math.h"
 #include <cmath>
@@ -22,18 +22,18 @@ Game::Game()
 
 		if (Enemy::NUM_ENEMIES < 20)
 		{
-			spawn_actor<Enemy>(
+			spawn_actor<NormalEnemy>(
 				get_player()->position + Vector::random_point_on_circle(500.f)
 			);
 		}
 
 	}, true);
 
-	timers.add_timer(100.f, [this]() {
+	timers.add_timer(10.f, [this]() {
 		if (get_player() == nullptr)
 			return;
 
-		if (Tank::am_tanks < 5)
+		if (Enemy::NUM_ENEMIES < 5)
 		{
 			spawn_actor<Tank>(
 				get_player()->position + Vector::random_point_on_circle(600.f)

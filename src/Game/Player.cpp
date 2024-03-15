@@ -3,8 +3,6 @@
 #include "Enemy.h"
 #include "Bullet.h"
 
-
-
 Player::Player(Vector position)
 	: Actor(position, Vector(32), COLOR_WHITE)
 {
@@ -14,7 +12,6 @@ Player::Player(Vector position)
 void Player::update()
 {
 	s_timers.update();
-
 	Vector input;
 
 	if (engKeyDown(Key::W))
@@ -34,29 +31,31 @@ void Player::update()
 	if (engKeyPressed(Key::Q))
 		speed -= 50.f;
 
+	s_timers.add_timer(1.f, [this]() {
+		is_cooldown = false;
+	}, true);
 	
-	if (engMouseButtonDown(Mouse_Button::Left))
+	if (is_cooldown == false)
 	{
-		is_shooting = true;
+		if (engMouseButtonPressed(Mouse_Button::Left) && ammo > 0)
+		{
+			is_shooting = true;
+		}
 	}
 
-	if (is_shooting)
+	if (is_shooting && ammo > 0)
 	{	
-		if (ammo > 0)
-		{	
-			s_timers.add_timer(0.5f, [this]() {
-				is_shooting = false;
-			}, true);
-			Vector mouse_position = Vector(engMouseX(), engMouseY());
-			mouse_position = game->get_camera().screen_to_world(mouse_position);
+		Vector mouse_position = Vector(engMouseX(), engMouseY());
+		mouse_position = game->get_camera().screen_to_world(mouse_position);
 
-			Vector bullet_direction = mouse_position - position;
-			bullet_direction.normalize();
+		Vector bullet_direction = mouse_position - position;
+		bullet_direction.normalize();
 
-			auto* bullet = game->spawn_actor<Bullet>(position);
-			bullet->set_direction(bullet_direction);
-			ammo--;
-		}
+		auto* bullet = game->spawn_actor<Bullet>(position);
+		bullet->set_direction(bullet_direction);
+		is_cooldown = true;
+		is_shooting = false;
+		ammo--;
 	}
 
 	if (health < MAX_HEALTH)
@@ -75,13 +74,16 @@ void Player::update()
 		if (pickupActor)
 		{
 			pickupActor->destroy();
-			ammo == M_ammo;
+			ammo = M_ammo;
 		}
 	}
 }
 
 void Player::draw()
 {
+	engSetDrawColor(COLOR_YELLOW);
+	engDrawTextF(1000, 1000, "Ammo: %i/%i", ammo, M_ammo);
+
 	Vector mouse_position = Vector(engMouseX(), engMouseY());
 	mouse_position = game->get_camera().screen_to_world(mouse_position);
 

@@ -5,3 +5,9 @@ PickUp::PickUp(Vector position)
 {
 	collision_channel = Collision_Channel::PickUp;
 }
+
+void PickUp::init(Vector a_size, Color a_color)
+{
+	size = a_size;
+	color = a_color;
+}
